@@ -1,5 +1,6 @@
 package com.codecool.havszab.codenames.model;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,10 +19,18 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "chats_users",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "chat_id")})
+    private List<Chat> chats;
+
+    @OneToMany(mappedBy = "author")
+    private List<Message> messages;
+
     private Long played_games;
 
     @Enumerated
-    @ElementCollection(targetClass = Status.class)
     private Status status;
 
     private Long wrong_votes;

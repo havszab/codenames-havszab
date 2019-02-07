@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // Use code like this to make an API, for e.g. mobile clients, AJAX calls,..
@@ -30,7 +29,7 @@ public class IndexPageREST {
         this.infoRepository = infoRepository;
     }
 
-    @RequestMapping(value = "/{username}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/api/info/{username}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public Map getIndexPageWithLoggedInUser(@PathVariable String username) {
         Map result = new HashMap();
@@ -39,7 +38,7 @@ public class IndexPageREST {
         return result;
     }
 
-    @GetMapping("/")
+    @GetMapping("/api/info")
     public Map getIndexPage() {
         Map result = new HashMap();
         result.put("info", infoRepository.findAll());
