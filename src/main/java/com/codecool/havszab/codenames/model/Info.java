@@ -19,24 +19,35 @@ public class Info {
     private String imgPath;
 
     @Column
+    private int imgHeight;
+
+    @Column
+    private int imgWidth;
+
+    @Column
+    private int posX;
+
+    @Column
+    private int posY;
+
+    @Column
     private int height;
 
     @Column
     private int width;
 
     public Info() {
+
     }
 
-    public Info(String title, String bodyText, String imgPath) {
+    public Info(String title, String bodyText, String imgPath, int imgWidth, int imgHeight, int posX, int posY, int height, int width) {
         this.title = title;
         this.bodyText = bodyText;
         this.imgPath = imgPath;
-    }
-
-    public Info(String title, String bodyText, String imgPath, int width, int height) {
-        this.title = title;
-        this.bodyText = bodyText;
-        this.imgPath = imgPath;
+        this.imgHeight = imgHeight;
+        this.imgWidth = imgWidth;
+        this.posX = posX;
+        this.posY = posY;
         this.height = height;
         this.width = width;
     }
@@ -87,5 +98,37 @@ public class Info {
 
     public void setWidth(int width) {
         this.width = width;
+    }
+
+    public int getImgHeight() {
+        return imgHeight;
+    }
+
+    public void setImgHeight(int imgHeight) {
+        this.imgHeight = imgHeight;
+    }
+
+    public int getImgWidth() {
+        return imgWidth;
+    }
+
+    public void setImgWidth(int imgWidth) {
+        this.imgWidth = imgWidth;
+    }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
     }
 }

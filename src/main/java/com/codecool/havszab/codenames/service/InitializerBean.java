@@ -18,15 +18,19 @@ public class InitializerBean {
                         "One player of each team is selected as the team's spymaster, the others are field operatives.",
                 "red_vs_blue.jpg",
                 300,
-                170));
+                170,
+                0, 0,
+                3, 4));
         infoRepository.save(new Info(
                 "The key",
                 "Twenty-five code name cards, each bearing a word, are laid out in a 5×5 rectangular grid, in random order." +
                         " A number of these words represent red agents, a number represent blue agents," +
                         " one represents an assassin, and the others represent innocent bystanders.",
                 "key.png",
-                125,
-                125));
+                100,
+                100,
+                0, 4,
+                3, 4));
         infoRepository.save(new Info(
                 "As spymaster",
                 "Give verbal hints to your field operatives to successfully locate the agents bound to your team. " +
@@ -35,8 +39,10 @@ public class InitializerBean {
                         "They originally can vote to words at the maximum quantity you provided, extended with a bonus opportunity of tipping." +
                         "Giving a higher number to operatives to enable more tips can be smart, but it can be misleading, too." ,
                 "spymaster.jpg",
-                120,
-                80));
+                168,
+                112,
+                4, 0,
+                3, 6));
         infoRepository.save(new Info(
                 "Be correct!",
                 "As spymaster you have to find out the hints by respecting the following rules: " +
@@ -44,8 +50,10 @@ public class InitializerBean {
                         "Your hint has to be single-word, only in case of a property name is the multi-word expression allowed. " +
                         "You can't use the words which refer to non-located agents.",
                 "crime.png",
-                110,
-                60));
+                154,
+                84,
+                4, 7,
+                3, 5));
         infoRepository.save(new Info(
                 "Turns",
                 "Red and blue teams take turns. Each turn is began by the spymaster, who gives a keyword and a specified number. " +
@@ -56,7 +64,9 @@ public class InitializerBean {
                         "But you can do a bigger mistake by spotting the assassin, what means the mission is lost for you instantly.",
                 "possible_targets.jpg",
                 150,
-                150));
+                150,
+                0, 3,
+                4, 5));
         infoRepository.save(new Info(
                 "The time",
                 "Setting up a time limit for turns can make the game more exciting. " +
@@ -65,7 +75,9 @@ public class InitializerBean {
                         "This useful item is available in the shop, visit it to lower the risk of the mission failure. ",
                 "time_extension.jpg",
                 300,
-                170));
+                170,
+                5, 3,
+                4, 5));
 
         userRepository.save(new User(
                 "TheFirst",
