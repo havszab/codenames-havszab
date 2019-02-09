@@ -8,9 +8,9 @@ import com.codecool.havszab.codenames.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InitializerBean {
+public class InfoInitializerBean {
 
-    public InitializerBean(InfoRepository infoRepository, UserRepository userRepository) {
+    public InfoInitializerBean(InfoRepository infoRepository) {
         //Init rules and hints:
         infoRepository.save(new Info(
                 "The roles",
@@ -25,19 +25,20 @@ public class InitializerBean {
                 "The key",
                 "Twenty-five code name cards, each bearing a word, are laid out in a 5×5 rectangular grid, in random order." +
                         " A number of these words represent red agents, a number represent blue agents," +
-                        " one represents an assassin, and the others represent innocent bystanders.",
+                        " one represents an assassin, and the others represent innocent bystanders. " +
+                        "Your goal is locating all your agents, if you do, or the opposite team spots the assassin, you win.",
                 "key.png",
                 100,
                 100,
                 0, 4,
-                3, 4));
+                4, 3));
         infoRepository.save(new Info(
                 "As spymaster",
                 "Give verbal hints to your field operatives to successfully locate the agents bound to your team. " +
                         "Hints have to be single-word and should relate to as much team-agents as possible by its meaning. " +
-                        "After choosing the hint, you have to provide a number to your operatives to specify how many words you connected with it." +
-                        "They originally can vote to words at the maximum quantity you provided, extended with a bonus opportunity of tipping." +
-                        "Giving a higher number to operatives to enable more tips can be smart, but it can be misleading, too." ,
+                        "After choosing the hint, you have to provide a number to your operatives to specify how many words you connected with it. " +
+                        "They originally can vote to words at the maximum quantity you provided, extended with a bonus opportunity of tipping. " +
+                        "Giving a higher number to operatives to enable more tips can be smart, but it can be misleading, too. ",
                 "spymaster.jpg",
                 168,
                 112,
@@ -53,7 +54,7 @@ public class InitializerBean {
                 154,
                 84,
                 4, 7,
-                3, 5));
+                3, 7));
         infoRepository.save(new Info(
                 "Turns",
                 "Red and blue teams take turns. Each turn is began by the spymaster, who gives a keyword and a specified number. " +
@@ -78,14 +79,7 @@ public class InitializerBean {
                 170,
                 5, 3,
                 4, 5));
-
-        userRepository.save(new User(
-                "TheFirst",
-                "hahaha",
-                "havsza@gmail.com"
-        ));
     }
-
 
 
 }

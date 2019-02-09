@@ -38,6 +38,7 @@ public class IndexPageREST {
         return result;
     }
 
+    @CrossOrigin
     @GetMapping("/api/info")
     public Map getIndexPage() {
         Map result = new HashMap();
